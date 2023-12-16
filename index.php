@@ -28,7 +28,15 @@
             <input type="submit" value="Pošalji">
         </form>';
     }
-        
+
+    if (isset($_GET['delete'])) {
+        $query  = "DELETE FROM users";
+		$query .= " WHERE id=".(int)$_GET['delete'];
+		$query .= " LIMIT 1";
+		$result = @mysqli_query($MySQL, $query);
+
+    }
+
     if (isset($_POST["user"]) && isset($_POST["pass"]))   {
        if ($_POST["user"] == "admin" && $_POST["pass"] == "123")     {  
 		   $_SESSION["username"] = $_POST["user"]; 
@@ -57,7 +65,7 @@
                     $query  = "SELECT * FROM users ORDER BY id DESC";
                     $result = @mysqli_query($MySQL, $query);
                     while($row = @mysqli_fetch_array($result)) {
-                        print "<p><a href='index.php?id=" . $row['id'] . "'>edit</a> ". $row['user_firstname'] . " <span style='text-decoration:underline'>" . $row['user_lastname'] . "</span></p>";
+                        print "<p> <a href='index.php?delete=" . $row['id'] . "'>delete</a> <a href='index.php?id=" . $row['id'] . "'>edit</a> ". $row['user_firstname'] . " <span style='text-decoration:underline'>" . $row['user_lastname'] . "</span></p>";
                     }
                 }
 	   }
