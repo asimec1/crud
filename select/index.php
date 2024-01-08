@@ -18,7 +18,6 @@
 	<h1>SELECT korisnika -> DML </h1>
 	<?php 
     $MySQL = mysqli_connect("localhost","root","","test3") or die('Error connecting to MySQL server.');
-    session_start();  
 
     print '<h2>Users</h2>
         <ul>
