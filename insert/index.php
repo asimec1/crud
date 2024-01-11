@@ -13,10 +13,12 @@
     ul { list-style-type:none;}
 	label { display:block;margin-top:10px;margin-bottom:4px; }
     input[type="submit"] { margin-top:10px; }
+    h1 { font-size:24px; }
+    h2 { margin-top:30px; font-size:18px; }
   </style>
 <body>
 <div class="container">
-	<h1>INSERT korisnika -> DML </h1>
+	<h1>INSERT korisnika &rsaquo; DML </h1>
 	<?php 
     $MySQL = mysqli_connect("localhost","root","","test3") or die('Error connecting to MySQL server.');
 
@@ -31,12 +33,12 @@
 
     print '<form method="POST" id="MyForm">
                 <div class="form-group">
-                    <label for="user">Ime:*</label>
-                    <input type="text" class="form-control" name="user_firstname" required placeholder="Ime">
+                    <label for="ime">Ime:*</label>
+                    <input type="text" id="ime" class="form-control" name="user_firstname" required placeholder="Ime">
                 </div>
                 <div class="form-group">
-                    <label for="user">Prezime:*</label>
-                    <input type="text" class="form-control" name="user_lastname" required placeholder="Prezime">
+                    <label for="prezime">Prezime:*</label>
+                    <input type="text" id="prezime" class="form-control" name="user_lastname" required placeholder="Prezime">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Pošalji" class="btn btn-primary">

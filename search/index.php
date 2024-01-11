@@ -10,7 +10,8 @@
   </head>
   <style>
 	body { margin: 10px;}
-    ul { list-style-type:none;}
+    h1 { font-size:24px; }
+    h2 { margin-top:30px; font-size:18px; }
 	
   </style>
 <body>
@@ -27,8 +28,8 @@
         print '
         <form method="POST" id="MyForm">
             <div class="form-group">
-                <label for="user">Pretraga:*</label>
-                <input type="text" class="form-control" name="search" required placeholder="pretraga">
+                <label for="search">Pretraga:*</label>
+                <input type="text" id="search" class="form-control" name="search" required placeholder="pretraga">
             </div>
             <div class="form-group">
                 <input type="submit" value="Pretraži" class="btn btn-primary">

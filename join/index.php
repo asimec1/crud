@@ -10,34 +10,29 @@
   </head>
   <style>
 	body { margin: 10px;}
-    h1 { font-size:24px; }
-    h2 { margin-top:30px; font-size:18px; }
+  h1 { font-size:24px; }
+  h2 { margin-top:30px; font-size:18px; }
 	
   </style>
 <body>
 <div class="container">
-	<h1>DELETE korisnika -> DML </h1>
+	<h1>SELECT korisnika &rsaquo; DML</h1>
 	<?php 
     $MySQL = mysqli_connect("localhost","root","","test3") or die('Error connecting to MySQL server.');
 
-    print '<h2>Users</h2>
+    print '<h2>Users (Countries)</h2>
+        
         <hr style="border-bottom:1px solid grey">';
-
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $query  = "DELETE FROM users WHERE id=" . (int)$_GET['edit']; 
-            $result = @mysqli_query($MySQL, $query);
-    
-            print '<p class="alert alert-danger">Podaci su uspješno obrisani!</p>';
-
-        }
-
         $query  = "SELECT * FROM users";
+        $query .= " LEFT JOIN countries ON countries.country_code = users.country_code";
         $result = @mysqli_query($MySQL, $query);
         while($row = @mysqli_fetch_array($result)) {
-            print "<p><a href=index.php?edit=". $row['id'] ."><i class='bi bi-trash'></i></a> " . $row['user_firstname'] . " <span style='color:green'>" . $row['user_lastname'] . "</span></p>";
+            print "<p><i class='bi bi-person'></i> ". $row['user_firstname'] . " <span style='color:green'>" . $row['user_lastname'] . "</span> " . ($row['country_name'] != '' ? "(" . $row['country_name'] . ")" : "" ) . "</p>";
         }
 	   
 	 ?>
 </div>
 </body>
 </html>
+
+

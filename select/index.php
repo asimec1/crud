@@ -11,22 +11,23 @@
   <style>
 	body { margin: 10px;}
     ul { list-style-type:none;}
-	
+	h1 { font-size:24px; }
+    h2 { margin-top:30px; font-size:18px; }
   </style>
 <body>
 <div class="container">
-	<h1>SELECT korisnika -> DML </h1>
+	<h1>SELECT korisnika &rsaquo; DML </h1>
 	<?php 
     $MySQL = mysqli_connect("localhost","root","","test3") or die('Error connecting to MySQL server.');
 
     print '<h2>Users</h2>
         <ul>
             <li><a href="index.php?menu=1">SELECT ALL</a></li>
-            <li><a href="index.php?menu=2">SELECT ALL -> ORDER DESC firstname</a></li>
-            <li><a href="index.php?menu=3">SELECT ALL -> ORDER ASC lastname</a></li>
-            <li><a href="index.php?menu=4">SELECT -> WHERE lastname Doe</a></li>
-            <li><a href="index.php?menu=5">SELECT -> LIMIT 10</a></li>
-            <li><a href="index.php?menu=6">SELECT -> COMBINE ORDER ASC lastname AND LIMIT 15</a></li>
+            <li><a href="index.php?menu=2">SELECT ALL &rsaquo; ORDER DESC firstname</a></li>
+            <li><a href="index.php?menu=3">SELECT ALL &rsaquo; ORDER ASC lastname</a></li>
+            <li><a href="index.php?menu=4">SELECT &rsaquo; WHERE lastname Doe</a></li>
+            <li><a href="index.php?menu=5">SELECT &rsaquo; LIMIT 10</a></li>
+            <li><a href="index.php?menu=6">SELECT &rsaquo; COMBINE ORDER ASC lastname AND LIMIT 15</a></li>
         </ul>
         <hr style="border-bottom:1px solid grey">';
 
